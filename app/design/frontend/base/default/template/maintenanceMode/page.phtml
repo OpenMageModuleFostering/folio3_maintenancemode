@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Site Under Maintenance</title>
+
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>countdown/jquery.countdown.css">
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>countdown/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>countdown/jquery.plugin.min.js"></script>
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>countdown/jquery.countdown.min.js"></script>
+
+        <?php if($this->hasCountdown()) : ?>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                    jQuery('#counter').countdown({
+                        until: '<?php echo $this->getCountDownTime(); ?>',
+                        format: 'dHMs'
+                    });
+                });
+            </script>
+        <?php endif; ?>
+
+        <style>
+            *{
+                margin: 0px;
+                passing: 0px;
+            }
+
+            body{
+                background-color: #222222;
+                color: #DDDDDD;
+                font-family: sans-serif;
+                margin-top: 350px;
+            }
+
+            .block{
+                padding: 25px;
+                background-color: #555555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="block">
+            <?php echo $this->getChildHtml($this->getStaticPageIdentifier()); ?>
+            <div id="counter"></div>
+        </div>
+    </body>
+</html>
