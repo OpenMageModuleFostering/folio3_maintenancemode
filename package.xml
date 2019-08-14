@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>folio3_maintenanceMode</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license uri="https://opensource.org/licenses/OSL-3.0">Open Software License (OSL)</license>
     <channel>community</channel>
@@ -9,10 +9,10 @@
     <summary>The basic functionality is to put the website into Maintenance mode. Additionally this extension has a count down and it also supports IP White listing. </summary>
     <description>The basic functionality is to put the website into Maintenance mode. Additionally this extension has a count down and it also supports IP White listing. </description>
     <notes>The basic functionality is to put the website into Maintenance mode. Additionally this extension has a count down and it also supports IP White listing. </notes>
-    <authors><author><name>Folio3</name><user>MAG003179920</user><email>ecommerce@folio3.com</email></author></authors>
-    <date>2016-10-04</date>
-    <time>08:50:21</time>
-    <contents><target name="magecommunity"><dir name="Folio3"><dir name="MaintenanceMode"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><file name="Date.php" hash="3a2ecd4b91754de34af2145f0c98a131"/></dir></dir></dir><file name="Page.php" hash="f94becb61af14c1a4d55c853fb077b85"/></dir><dir name="Controller"><dir name="Router"><file name="Standard.php" hash="cf793b1f0d146a052dee568e4962602d"/></dir></dir><dir name="Helper"><file name="Data.php" hash="97f8ad002ca4a4b0c22029807c135b0a"/></dir><dir name="etc"><file name="config.xml" hash="ce61a055d827ab9b340407fdd25e45bc"/><file name="system.xml" hash="8653337ef0ccef347f4066f8c38fa5a4"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="maintenanceMode"><file name="page.phtml" hash="56b6a0290e84bb0e14ec804453289636"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Folio3_MaintenanceMode.xml" hash="92214472862c74ecda87315862630ab3"/></dir></target></contents>
+    <authors><author><name>Folio3</name><user>MAG003179920</user><email>ecommerce@folio3.com</email></author><author><name>Muhammad Saad Taimoor</name><user>MAG002972359</user><email>saadtaimoor@live.com</email></author></authors>
+    <date>2016-10-27</date>
+    <time>06:50:36</time>
+    <contents><target name="magecommunity"><dir name="Folio3"><dir name="MaintenanceMode"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><file name="Date.php" hash="3a2ecd4b91754de34af2145f0c98a131"/><dir name="Static"><file name="Block.php" hash="210bb5612405e5cc02b011969f279ec4"/></dir></dir></dir></dir><file name="Page.php" hash="f94becb61af14c1a4d55c853fb077b85"/></dir><dir name="Controller"><dir name="Router"><file name="Standard.php" hash="cf793b1f0d146a052dee568e4962602d"/></dir></dir><dir name="Helper"><file name="Data.php" hash="97f8ad002ca4a4b0c22029807c135b0a"/></dir><dir name="data"><dir name="maintenancemode_setup"><file name="data-install-1.0.1.php" hash="bad2abd9e2c3b31bd4651129cad3564c"/></dir></dir><dir name="etc"><file name="config.xml" hash="5fb8a0920a4e3164e63074a66cfa504e"/><file name="system.xml" hash="20db36025bee8d2daa404edbb9219553"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="maintenanceMode"><file name="page.phtml" hash="56b6a0290e84bb0e14ec804453289636"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Folio3_MaintenanceMode.xml" hash="92214472862c74ecda87315862630ab3"/></dir></target><target name="mageweb"><dir name="js"><dir name="countdown"><file name="jquery.countdown.css" hash="7ea5348408a0b645c25bcb48452479b8"/><file name="jquery.countdown.min.js" hash="1fae78fa67a2bef40a2dbcecbec95256"/><file name="jquery.min.js" hash="e0e0559014b222245deb26b6ae8bd940"/><file name="jquery.plugin.min.js" hash="8f84414b05f6548c7fb0ba714f2290fc"/></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Folio3_MaintenanceMode>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Folio3_MaintenanceMode>
     </modules>
     <global>
@@ -21,6 +21,13 @@
                 <class>Folio3_MaintenanceMode_Helper</class>
             </Folio3_MaintenanceMode>
         </helpers>
+        <resources>
+            <maintenancemode_setup>
+                <setup>
+                    <module>Folio3_MaintenanceMode</module>
+                </setup>
+            </maintenancemode_setup>
+        </resources>
     </global>
     <stores>
         <default>
@@ -48,8 +55,8 @@
                 <isEnabled>0</isEnabled>
                 <adminAccess>1</adminAccess>
                 <allowedIPs></allowedIPs>
-                <pageContent><![CDATA[<h1>we are sorry but this store is down for maintenance</h1>
-<h2>please try again later ...</h2>]]></pageContent>
+                <pageStaticBlock>f3_maintenance</pageStaticBlock>
+                <showCountdown>0</showCountdown>
                 <upDateTime>Today</upDateTime>
             </config>
         </MaintenanceMode>
