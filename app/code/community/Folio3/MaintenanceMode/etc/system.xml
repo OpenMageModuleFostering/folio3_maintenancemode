@@ -3,7 +3,7 @@
     <tabs>
         <folio3 translate="label" module="Folio3_MaintenanceMode">
             <label>Folio3 Extensions</label>
-            <sort_order>100</sort_order>
+            <sort_order>1000</sort_order>
         </folio3>
     </tabs>
 
@@ -77,6 +77,7 @@
                         </showCountdown>
                         <upDateTime translate="label comment">
                             <label>Expected Up Date/Time</label>
+                            <comment><![CDATA[The expected date/time for the site to be live again.<br />This date depends on the store's timezone selected in System -> Configuration -> General -> General -> Locale Options -> Timezone]]></comment>
                             <frontend_type>text</frontend_type>
                             <frontend_model>folio3_maintenanceMode/adminhtml_system_config_date</frontend_model>
                             <sort_order>6</sort_order>

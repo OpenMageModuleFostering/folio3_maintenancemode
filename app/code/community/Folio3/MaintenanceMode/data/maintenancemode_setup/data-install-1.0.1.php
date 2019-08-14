@@ -2,28 +2,16 @@
     //--- Add a Default Maintenance Mode Static
     //--- Block Page for the Customer
 
-    $content = '<style type="text/css">
-            h1{
-                margin-bottom: 20px;
-                margin-left: 0px;
-            }
-
-            h2{
-                margin-left: 494px;
-                font-size: 1.6em;
-            }
-
-            .centered{
-                margin-left: auto;
-                margin-right: auto;
-                width: 800px;
-            }
-
-            </style>
-
-<div class="centered">
-    <h1>we are sorry but this store is down for maintenance</h1>
-    <h2>please try again later ...</h2>
+    $content = '<h2 class="intro">We are sorry but this store is down for maintenance. <br />Please try again later</h2>
+<div id="subscribe">
+<div id="socialIcons">
+<ul>
+                <li><a href="" target="_blank" title="Twitter" class="twitterIcon"></a></li>
+                <li><a href="" target="_blank" title="facebook" class="facebookIcon"></a></li>
+                <li><a href="" target="_blank" title="linkedIn" class="linkedInIcon"></a></li>
+                <li><a href="" target="_blank" title="Pintrest" class="pintrestIcon"></a></li>
+            </ul>
+</div>
 </div>';
 
     //--- One Stati Block for All Store Views
@@ -32,7 +20,7 @@
     foreach ($stores as $store){
         $block = Mage::getModel('cms/block');
 
-        $block->setTitle('Maintenance Mode');
+        $block->setTitle('Site Under Maintenance');
         $block->setIdentifier('f3_maintenance');
         $block->setStores(array($store));
         $block->setIsActive(1);

@@ -1,6 +1,11 @@
 <?php
 
 class Folio3_MaintenanceMode_Controller_Router_Standard extends Mage_Core_Controller_Varien_Router_Standard {
+    /**
+     * Match the request and check if the website is in maintenance mode.
+     * @param Zend_Controller_Request_Http $request
+     * @return boolean
+     */
     public function match(Zend_Controller_Request_Http $request) {
         $helper = Mage::helper('Folio3_MaintenanceMode');
         $storeCode = $request->getStoreCodeFromPath();

@@ -1,51 +1,76 @@
 <?php
 class Folio3_MaintenanceMode_Block_Page extends Mage_Core_Block_Template{
-    private $helper, $storeCode;
+    private $_helper, $_storeCode, $_pageBlock;
 
     public function __construct(){
         parent::__construct();
 
-        $this->helper = Mage::helper('Folio3_MaintenanceMode');
-        $this->storeCode = Mage::app()->getRequest()->getStoreCodeFromPath();
+        $this->_helper = Mage::helper('Folio3_MaintenanceMode');
+        $this->_storeCode = Mage::app()->getRequest()->getStoreCodeFromPath();
     }
 
+    /**
+     * Load the Maintenance Page Block in Layout.
+     */
     private function _loadBlock(){
-        $staticBlockId = $this->helper->getConfig('pageStaticBlock', $this->storeCode);
-        $pageContentBlock = $this->getLayout()->createBlock('cms/block')->setBlockId($staticBlockId);
+        if($this->_pageBlock){
+            return $this->_pageBlock;
+        }
 
-        $this->append($pageContentBlock);
+        $staticBlockId = $this->getHelper()->getConfig('pageStaticBlock', $this->_storeCode);
+        $this->_pageBlock = $this->getLayout()->createBlock('cms/block')->setBlockId($staticBlockId);
+
+        $this->append($this->_pageBlock);
     }
 
+    /**
+     * Get Static Page name in loaded layout.
+     *
+     * @return string
+     */
     public function getStaticPageIdentifier(){
         $this->_loadBlock();
-        return $this->getSortedChildren()[0];
+        return $this->_pageBlock->getNameInLayout();
     }
 
-    public function hasCountdown(){
-        $showCountdown = $this->helper->getConfig('showCountdown', $this->storeCode);
-        if($showCountdown) {
-            if ($this->getCountDownTime() !== '') {
-                return true;
-            }
-        }
-
-        return false;
+    /**
+     * Get helper class.
+     *
+     * @return Folio3_MaintenanceMode_Helper_Data
+     */
+    public function getHelper(){
+        return $this->_helper;
     }
 
-    public function getCountDownTime(){
-        $upDateTime = $this->helper->getConfig('upDateTime', $this->storeCode);
+    /**
+     * Get current store name.
+     *
+     * @return string
+     */
+    public function getCurrentStoreName() {
+        $storeName = Mage::app()->getStore()->getFrontendName();
+        return $storeName;
+    }
 
-        if($upDateTime !== ''){
-            $upDateTime = strtotime($upDateTime);
-            $Now = strtotime('now');
+    /**
+     * Get Static Block Title to show as Page Title.
+     *
+     * @return string
+     */
+    public function getStaticBlockTitle(){
+        $this->_loadBlock();
+        $cmsBlock = Mage::getModel('cms/block')->load($this->getSortedChildBlocks()[$this->getStaticPageIdentifier()]->getBlockId());
+        return (($cmsBlock->getId()) ? $cmsBlock->getTitle() : 'Site Under Maintenance');
+    }
 
-            $Diff = $upDateTime - $Now;
-            if($Diff > 0){
-                return $Diff;
-            }
-        }
-
-        return '';
+    /**
+     * Get the store specific favicon file URL.
+     *
+     * @return string
+     */
+    public function getFavicon(){
+        $faviconFile = $this->getLayout()->createBlock('page/html_head')->getFaviconFile();
+        return $faviconFile;
     }
 }
 ?>
