@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/folio3_maintenanceMode",
+    "name": "OpenMageModuleFostering\/folio3_maintenanceMode",
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
     "description": "The basic functionality is to put the website into Maintenance mode. Additionally this extension has a count down and it also supports IP White listing.",
     "authors": [
-    {
-        "name": "Folio3",
-        "email": "ecommerce@folio3.com"
-    }
-],
+        {
+            "name": "Folio3",
+            "email": "ecommerce@folio3.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
